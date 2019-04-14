@@ -31,3 +31,11 @@ class PlayingCard:
         rank = self.ranks[random.randInt(0, len(self.ranks))]
         card = (suit, rank)
         return card
+
+    def deck(self):
+        cards = []
+        for suit in self.suits:
+            for rank in self.ranks:
+                cards.append(PlayingCard(suit, rank))
+
+        return cards
