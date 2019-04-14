@@ -1,3 +1,0 @@
-import fox
-
-fox.say()
