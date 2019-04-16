@@ -15,27 +15,17 @@ import random
 
 class PlayingCard:
 
-    suits = ('Clubs', 'Hearts', 'Diamonds', 'Spades')
+    suits = ('C', 'H', 'D', 'S')
     ranks = ('2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A')
 
     suit = ''
     rank = ''
 
     # default to standard 52 playing card deck
-    def __init__(self, suit=suits[0], rank=ranks[0]):
-        self.suit = suit
-        self.rank = rank
+    def __init__(self, suit=0, rank=0):
+        self.suit = self.suits[suit]
+        self.rank = self.ranks[rank]
 
-    def random(self):
-        suit = self.suits[random.randInt(0, len(self.suits))]
-        rank = self.ranks[random.randInt(0, len(self.ranks))]
-        card = (suit, rank)
-        return card
 
-    def deck(self):
-        cards = []
-        for suit in self.suits:
-            for rank in self.ranks:
-                cards.append(PlayingCard(suit, rank))
-
-        return cards
+    def __str__(self):
+        return '[' + '%2s ' % self.rank + self.suit + ']'

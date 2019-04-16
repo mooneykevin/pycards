@@ -1,6 +1,10 @@
 import Deck
 
-deck = Deck.Deck()
 
-print("Hello Deck")
-deck.print()
+def main():
+    deck = Deck.Deck()
+    deck.print()
+
+
+if __name__ == "__main__":
+    main()

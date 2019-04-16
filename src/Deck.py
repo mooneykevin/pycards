@@ -18,16 +18,18 @@ import random
 class Deck:
 
     cards = []
-    cardType = ''
+    card_type = ''
 
-    def __init__(self, cardType='PlayingCard'):
-        card = PlayingCard.PlayingCard()
-        cards = card.deck()
-        random.shuffle(cards)
+    def __init__(self, card_type='PlayingCard'):
+        for suit in range(4):
+            for rank in range(13):
+                card = PlayingCard.PlayingCard(suit, rank)
+                self.cards.append(card)
+        # random.shuffle(cards)
 
     def print(self):
         for card in self.cards:
-            print(card)
+            print(str(card))
 
     def add(self, card):
         pass
@@ -35,17 +37,14 @@ class Deck:
     def draw(self):
         pass
 
-    def reset(self):
-        pass
-
     def shuffle(self):
         random.shuffle(self.cards)
 
     def clear(self):
-        pass
+        self.cards.clear()
 
     def size(self):
         return len(self.cards)
 
     def empty(self):
-        pass
+        return self.size() == 0
