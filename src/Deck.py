@@ -21,30 +21,27 @@ class Deck:
     card_type = ''
 
     def __init__(self, card_type='PlayingCard'):
-        for suit in range(4):
-            for rank in range(13):
+        self.cards = []
+        for suit in ['C', 'H', 'D', 'S']:
+            for rank in range(1,14):
                 card = PlayingCard.PlayingCard(suit, rank)
                 self.cards.append(card)
-        # random.shuffle(cards)
+
+    def deal(self):
+        if self.isNotEmpty():
+            return self.cards.pop()
+        else:
+            return None
 
     def print(self):
         for card in self.cards:
             print(str(card))
 
-    def add(self, card):
-        pass
-
-    def draw(self):
-        pass
+    def isNotEmpty(self):
+        return len(self.cards) > 0
 
     def shuffle(self):
         random.shuffle(self.cards)
 
-    def clear(self):
-        self.cards.clear()
-
-    def size(self):
-        return len(self.cards)
-
-    def empty(self):
-        return self.size() == 0
+    def reset(self):
+        self.__init__()
