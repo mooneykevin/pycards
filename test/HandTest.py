@@ -33,19 +33,18 @@ class HandTest:
     card2 = deck2.deal()
 
     hand2.add(card1)
-    # hand2.add(card2)
+    hand2.add(card2)
 
     if hand2.contains(card2):
       print("Yes2")
     else:
        print("No2")
 
-    print("hand2: ")
+    print("hand2 length: " + str(len(hand2)))
     hand2.display()
-    print()
 
     # test remove
     hand2.remove(card1)
-    print("hand2: ")
+    print("hand2 length 2: " + str(hand2.size()))
     hand2.display()
 

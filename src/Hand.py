@@ -27,3 +27,10 @@ class Hand:
             if item.suit == card.suit and item.rank == card.rank:
                 return True
         return False
+
+    def size(self):
+        return len(self)
+
+    def __len__(self):
+        return len(self.hand)
+
