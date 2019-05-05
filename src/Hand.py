@@ -15,9 +15,11 @@ class Hand:
                 self.hand = [i for i in self.hand if not(i == card)]
 
     # works because our PlayingCard class has a __str__ method defined
-    def display(self):
+    def __str__(self):
+        cardstrings = []
         for card in self.hand:
-            print(str(card))
+            cardstrings.append(str(card))
+        return ' '.join(cardstrings)
 
     def contains(self, card):
         return self.__contains__(card)
