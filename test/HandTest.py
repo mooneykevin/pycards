@@ -11,8 +11,7 @@ class HandTest:
     deck.shuffle()
 
     # deal returns an iterable of cards, which is why we can for-loop over this call
-    for i in deck.deal(5):
-        hand.add(i)
+    hand.add(deck.deal(3))
 
     # we can't do this, because add expects a single card and deal() now returns an iterable
     # hand2.add(deck.deal())

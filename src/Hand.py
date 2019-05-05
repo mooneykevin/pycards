@@ -5,8 +5,9 @@ class Hand:
     def __init__(self):
         self.hand = []
 
-    def add(self, card):
-        self.hand.append(card)
+    def add(self, cards):
+        for card in cards:
+            self.hand.append(card)
 
     # this is O(n^2) but we'll take it for now since n < 53
     def remove(self, card):
