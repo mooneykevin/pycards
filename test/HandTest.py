@@ -5,21 +5,39 @@ from Deck import Deck
 class HandTest:
 
     deck = Deck()
-    hand = Hand()
-    hand2 = Hand()
 
     deck.shuffle()
 
-    # deal returns an iterable of cards, which is why we can for-loop over this call
-    hand.add(deck.deal(3))
+    hand = Hand()
+    hand.add(deck.deal(-1))
 
-    # we can't do this, because add expects a single card and deal() now returns an iterable
-    # hand2.add(deck.deal())
-    # hand2.add(deck.deal(3))
+    hand2 = Hand()
+    hand2.add(deck.deal(0))
 
-    # two options:
-    # 1) Always add cards to hand inside of a loop.
-    # 2) Refactor the add() method to accept a List.
+    hand3 = Hand()
+    hand3.add(deck.deal())
 
+    hand4 = Hand()
+    hand4.add(deck.deal(1))
+
+    hand5 = Hand()
+    hand5.add(deck.deal(5))
+
+    # should print nothing
+    print("\nfirst hand:\n")
     print(hand)
+
+    # should also print nothing
+    print("\nsecond hand:\n")
     print(hand2)
+
+    # should just print 1 card
+    print("\nthird hand:\n")
+    print(hand3)
+
+    # should also just print 1 card
+    print("\nfourth hand:\n")
+    print(hand4)
+
+    print("\nfifth hand:\n")
+    print(hand5)
