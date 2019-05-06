@@ -1,3 +1,7 @@
+# Hand.py
+# Authors: Jamal Almouslli, Kevin Mooney
+
+
 class Hand:
 
     hand = []
@@ -17,10 +21,10 @@ class Hand:
 
     # works because our PlayingCard class has a __str__ method defined
     def __str__(self):
-        cardstrings = []
+        card_strings = []
         for card in self.hand:
-            cardstrings.append(str(card))
-        return ' '.join(cardstrings)
+            card_strings.append(str(card))
+        return '\n'.join(card_strings)
 
     def contains(self, card):
         return self.__contains__(card)
@@ -37,3 +41,5 @@ class Hand:
     def __len__(self):
         return len(self.hand)
 
+    def empty(self):
+        return len(self.hand) == 0
