@@ -1,14 +1,16 @@
-from Hand import Hand
-
-
 class Player:
 
     name = None
-    hand = Hand()
+    _hand = None
+    money = 0
 
-    def __init__(self, name):
+    def __init__(self, name, hand, money):
         self.name = name
-        self.hand = Hand()
+        self._hand = hand
+        self.money = money
 
-    def print_name(self):
-        print(self.name)
+    def draw(self, cards):
+        self._hand.add(cards)
+
+    def discard(self, card):
+        self.hand.remove(card)
