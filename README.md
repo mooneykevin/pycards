@@ -1,3 +1,3 @@
 # pycards
 
-An extensible playing card project, written in Python.
+An playing card learning project, written in Python.
