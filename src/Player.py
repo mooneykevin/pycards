@@ -14,3 +14,7 @@ class Player:
 
     def discard(self, card):
         self.hand.remove(card)
+
+
+    def __str__(self):
+        return "{} has ${}".format(self.name, self.money)
