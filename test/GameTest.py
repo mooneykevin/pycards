@@ -1,4 +1,0 @@
-
-
-class GameTest:
-    pass
