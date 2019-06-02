@@ -39,3 +39,6 @@ class Deck:
 
     def reset(self):
         self.__init__()
+
+    def __len__(self):
+        return len(self.cards)
